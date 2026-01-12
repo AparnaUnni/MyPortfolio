@@ -90,12 +90,11 @@ export const About = () => {
               <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
-                  <strong> BTech in Computer Science </strong> APJ Abdul Kalam Technological University
+                  <strong> BTech in Computer Science </strong> <br/>
+                  APJ Abdul Kalam Technological University
                   (2019-2023)
                 </li>
-                <li>
-                  Relevant Coursework: Web Development
-                </li>
+                
               </ul>
             </div>
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
@@ -107,8 +106,7 @@ export const About = () => {
                     Front-end Developer at Tata Elxsi Limited (2024-2025){" "}
                   </h4>
                   <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
+                    Developed and maintained reusable React UI components for web applications, integrating REST APIs for seamless backend collaboration.
                   </p>
                 </div>
 

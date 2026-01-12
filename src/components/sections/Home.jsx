@@ -13,10 +13,7 @@ export const Home = () => {
           </h1>
 
           <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
-            Motivated and technically skilled Front-End Developer with a background in Computer
-Science Engineering. Passionate
-about creating intuitive, user-focused web applications and leveraging my expertise to
-contribute to innovative projects.
+            Motivated and technically skilled Front-End Developer with 1.5 years of experience building responsive, user-focused web applications using React, Next.js, and modern CSS frameworks. Passionate about creating intuitive interfaces and contributing to impactful, production-ready projects.
           </p>
           <div className="flex justify-center space-x-4">
             <a
