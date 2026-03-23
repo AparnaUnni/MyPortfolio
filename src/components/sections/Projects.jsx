@@ -36,6 +36,17 @@ const projects = [
     githubUrl: "https://github.com/AparnaUnni/OnlineGiftStore",
   },
   {
+    id: 9,
+    type: "web",
+    title: "Project-Expense Tracker",
+    description:
+      "Fullstack web application to manage project budgets and track expenses.",
+    image: "/projects/ProjectExpense.png",
+    tags: ["Next.js", "Express.js","Node.js","React",  "PostgreSQL", "Tailwind CSS"],
+    githubUrl: "https://github.com/AparnaUnni/ProjectExpenseTracker",
+  },
+  
+  {
     id: 4,
     type: "web",
     title: "Personal Portfolio Website",
