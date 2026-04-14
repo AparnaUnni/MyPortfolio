@@ -36,7 +36,7 @@ const projects = [
     githubUrl: "https://github.com/AparnaUnni/OnlineGiftStore",
   },
   {
-    id: 9,
+    id: 4,
     type: "web",
     title: "Project-Expense Tracker",
     description:
@@ -47,7 +47,7 @@ const projects = [
   },
   
   {
-    id: 4,
+    id: 5,
     type: "web",
     title: "Personal Portfolio Website",
     description:
@@ -57,7 +57,7 @@ const projects = [
     githubUrl: "https://github.com/AparnaUnni/DemoPortfolio",
   },
   {
-    id: 5,
+    id: 6,
     type: "web",
     title: "Weather App",
     description:
@@ -67,7 +67,7 @@ const projects = [
     githubUrl: "https://github.com/AparnaUnni/WeatherApp",
   },
   {
-    id: 6,
+    id: 7,
     type: "web",
     title: "To-Do List Application",
     description:
@@ -79,14 +79,14 @@ const projects = [
 
   // FIGMA PROJECTS
   {
-    id: 7,
+    id: 8,
     type: "figma",
     title: "Cafe Webpage Design",
     image: "/projects/myweb.png", 
     figmaUrl: "https://www.figma.com/proto/OhOLraiYdxwtXKixPCUU4y/Coffee-Cafe?node-id=2-2&p=f&t=MBEY3BYJUJ5ezmx1-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2",
   },
   {
-    id: 8,
+    id: 9,
     type: "figma",
     title: "ToDo Mobile App Design",
     image: "/projects/mymobile.png", 
@@ -158,7 +158,8 @@ const WebProjectCard = ({ project }) => (
 );
 
 const FigmaProjectCard = ({ project }) => (
-  <div className="rounded-xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition">
+  <div className="p-6 rounded-xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition">
+    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
     {project.image && (
       <img
         src={project.image}
@@ -167,7 +168,7 @@ const FigmaProjectCard = ({ project }) => (
       />
     )}
     <div className="p-4">
-      <h3 className="text-lg font-semibold">{project.title}</h3>
+      
       {project.figmaUrl && (
       <a
         href={project.figmaUrl}
@@ -195,7 +196,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen flex items-center justify-center py-20 overflow-x-hidden"
     >
       <RevealOnScroll>
         <div className="max-w-6xl mx-auto px-4">
@@ -204,7 +205,7 @@ export const Projects = () => {
           </h2>
 
           {/* FILTER TABS */}
-          <div className="flex justify-center gap-3 mb-10 flex-wrap">
+          <div className="flex justify-center gap-2 mb-10 flex-wrap px-2">
             {filters.map((filter) => (
               <button
                 key={filter.value}
@@ -222,7 +223,7 @@ export const Projects = () => {
           </div>
 
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => {
               if (project.type === "office")
                 return (
