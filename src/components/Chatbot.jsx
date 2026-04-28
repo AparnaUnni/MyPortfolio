@@ -42,9 +42,10 @@ export default function Chatbot() {
         content: m.content
       }));
 
-      const reply = await askClaude(userText, history.slice(0, -1));
+      const reply = await askGemini(userText, history.slice(0, -1));
       setMessages(prev => [...prev, { role: "assistant", content: reply }]);
     } catch (error) {
+      console.log("Full error:", error)
       setMessages(prev => [...prev, {
         role: "assistant",
         content: "Sorry, I ran into an issue. Please try again or contact directly!"
@@ -95,7 +96,7 @@ export default function Chatbot() {
                   ${msg.role === "user"
                     ? "bg-blue-600 text-white rounded-br-sm"
                     : "bg-gray-100 text-gray-800 rounded-bl-sm"}`}>
-                  {msg.content}
+                  {msg.content.replace(/\*\*/g, '').replace(/\*/g, '•')}
                 </div>
               </div>
             ))}
