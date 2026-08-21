@@ -58,8 +58,12 @@ export const Home = () => {
 
 
           <p className="tex-gray-400 text-sm md:text-lg mb-6 md:mb-8 max-w-lg mx-auto">
-            Motivated and technically skilled Front-End Developer with 1.5 years of experience building responsive, user-focused web applications using React, Next.js, and modern CSS frameworks. Passionate about creating intuitive interfaces and contributing to impactful, production-ready projects.
-          </p>
+Frontend & Full Stack Developer with 2+ years of 
+experience building web applications, internal 
+dashboards, and AI-powered interfaces using React, 
+Next.js, Node.js, and Python.          </p>
+
+
           <div className="flex justify-center space-x-4">
             <a
               href="#projects"

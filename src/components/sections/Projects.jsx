@@ -1,263 +1,311 @@
+"use client";
 
-import { useState } from "react";
-import { Github, ArrowRight, Link2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import {
+  ArrowRight,
+  ExternalLink,
+  Github,
+  X,
+} from "lucide-react";
+
 import { RevealOnScroll } from "../RevealOnScroll";
 
-
 const projects = [
-  // OFFICE PROJECTS
   {
     id: 1,
-    type: "office",
-    title: "Centralized Test Management Tool",
+    title: "Employee Management Dashboard",
     description:
-      "End-to-end test management tool for requirement analysis, test execution and report generation.",
-    tags: ["React", "CSS", "C#", "MongoDB", "Python"],
+      "Secure admin dashboard with JWT authentication, employee and team CRUD management, attendance tracking with check-in/check-out logs, and monthly reports visualised with Recharts.",
+    details:
+      "A secure dashboard for managing employees and teams. It includes JWT authentication, CRUD operations, attendance tracking, check-in/check-out logs, and monthly reports using Recharts.",
+    image: "/projects/EmployeeDashboard.png",
+    tags: [
+      "Next.js",
+      "Express.js",
+      "MongoDB",
+      "Recharts",
+      "JWT Auth",
+    ],
+    githubUrl: "https://github.com/AparnaUnni/employee-workforce-dashboard",
+    liveUrl: "https://employee-workforce-dashboard-teal.vercel.app/",
   },
   {
     id: 2,
-    type: "office",
-    title: "Automation Tool",
+    title: "Product Dashboard with AI Assistant",
     description:
-      "Automation tool using Python for creating Gherkin based test cases directly from requirements.",
-    tags: ["Python"],
+      "Next.js admin dashboard with real-time product catalogue and a context-scoped AI assistant.",
+    details:
+      "A product management dashboard with a context-scoped AI assistant. It uses useReducer for structured state management and dynamic system prompt construction to keep responses relevant to the product catalogue.",
+    image: "/projects/ProductDashboard.png",
+    tags: [
+      "Next.js",
+      "React",
+      "Gemini API",
+      "useReducer",
+      "Tailwind CSS",
+    ],
+    githubUrl: "https://github.com/AparnaUnni/AI-Assisted-Product-Dashboard",
+    liveUrl: "",
   },
-
-  // WEB DEVELOPMENT PROJECTS
-
-    {
+  {
     id: 3,
-    type: "web",
-    title: "Memoria - E-commerce Gift Store",
+    title: "Art Institution Website",
     description:
-      "Full-featured e-commerce platform for category browsing and product ordering.",
-    image: "/projects/memoria.png",
-    tags: ["Next.js", "React", "Express.js", "MongoDB", "Tailwind CSS","JWT Authentication"],
-    githubUrl: "https://github.com/AparnaUnni/OnlineGiftStore",
+      "Website for an art and dance institution with sections for programme images, videos, and faculty details.",
+    details:
+      "A responsive website created for an art and dance institution. The website includes programme sections, images, videos, and faculty details.",
+    image: "/projects/Nalanda.png",
+    tags: ["HTML", "CSS", "JavaScript","Responsive Design"],
+    githubUrl: "https://github.com/AparnaUnni/NalandaArts",
+    liveUrl: "https://nalanda-arts.vercel.app/",
   },
   {
     id: 4,
-    type: "web",
-    title: "Project-Expense Tracker",
+    title: "Memoria - E-commerce Gift Store",
     description:
-      "Fullstack web application to manage project budgets and track expenses.",
-    image: "/projects/ProjectExpense.png",
-    tags: ["Next.js", "Express.js","Node.js","React",  "PostgreSQL", "Tailwind CSS"],
-    githubUrl: "https://github.com/AparnaUnni/ProjectExpenseTracker",
+      "Full-featured e-commerce platform for category browsing and product ordering.",
+    details:
+      "An e-commerce gift store that allows users to browse products by category, view product information, and place product orders.",
+    image: "/projects/memoria.png",
+    tags: [
+      "Next.js",
+      "React",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    githubUrl: "https://github.com/AparnaUnni/OnlineGiftStore",
+    liveUrl: "",
   },
-  
   {
     id: 5,
-    type: "web",
-    title: "Personal Portfolio Website",
+    title: "Centralized Test Management Tool",
     description:
-      "Created a portfolio website using React.js and Tailwind CSS to showcase projects and skills.",
-    image: "/projects/portfolio.png",
-    tags: ["React.js", "Tailwind CSS"],
-    githubUrl: "https://github.com/AparnaUnni/DemoPortfolio",
+      "End-to-end test management tool for requirement analysis, test execution and report generation.",
+    details:
+      "A centralized test management platform that supports requirement analysis, test case management, test execution, and report generation.(Internal Project)",
+    tags: ["React", "CSS", "C#", "MongoDB", "Python"],
   },
-  {
-    id: 6,
-    type: "web",
-    title: "Weather App",
-    description:
-      "Built a responsive weather application with real-time updates.",
-    image: "/projects/weather.png",
-    tags: ["React.js", "OpenWeatherMap API", "CSS"],
-    githubUrl: "https://github.com/AparnaUnni/WeatherApp",
-  },
-  {
-    id: 7,
-    type: "web",
-    title: "To-Do List Application",
-    description:
-      "Created To-Do App with CRUD operations and local storage persistence.",
-    image: "/projects/todolist.png",
-    tags: ["React.js", "JavaScript"],
-    githubUrl: "https://github.com/AparnaUnni/ToDoList",
-  },
-
-  // FIGMA PROJECTS
-  {
-    id: 8,
-    type: "figma",
-    title: "Cafe Webpage Design",
-    image: "/projects/myweb.png", 
-    figmaUrl: "https://www.figma.com/proto/OhOLraiYdxwtXKixPCUU4y/Coffee-Cafe?node-id=2-2&p=f&t=MBEY3BYJUJ5ezmx1-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2",
-  },
-  {
-    id: 9,
-    type: "figma",
-    title: "ToDo Mobile App Design",
-    image: "/projects/mymobile.png", 
-    figmaUrl: "https://www.figma.com/proto/b9PhUnwYpJc0IduTdb6F8U/Figma-Mobile-Design?node-id=1-3&p=f&t=G0QyEK4RisNR4Tbj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3",
-  },
+  
 ];
 
+const ProjectModal = ({ project, onClose }) => {
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
 
-const filters = [
-  { label: "All", value: "all" },
-  { label: "Professional Projects", value: "office" },
-  { label: "Web Development", value: "web" },
-  { label: "Figma Designs", value: "figma" },
-];
+    document.addEventListener("keydown", handleEscape);
 
+    const previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
-const OfficeProjectCard = ({ project }) => (
-  <div className="p-6 rounded-xl border border-white/10 hover:border-blue-500/30 transition">
-    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-    <p className="text-gray-400 mb-4">{project.description}</p>
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = previousBodyOverflow;
+    };
+  }, [onClose]);
 
-    <div className="flex flex-wrap gap-2">
-      {project.tags.map((tech, i) => (
-        <span
-          key={i}
-          className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
-  </div>
-);
-
-const WebProjectCard = ({ project }) => (
-  <div className="p-6 rounded-xl border border-white/10 hover:border-blue-500/30 transition">
-    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-
-    <img
-      src={project.image}
-      alt={project.title}
-      className="mb-4 rounded-md"
-    />
-
-    <p className="text-gray-400 mb-4">{project.description}</p>
-
-    <div className="flex flex-wrap gap-2 mb-4">
-      {project.tags.map((tech, i) => (
-        <span
-          key={i}
-          className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
-
-    {project.githubUrl && (
-      <a
-        href={project.githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-400 hover:text-blue-300"
+  const modal = (
+    <div
+      className="fixed inset-0 z-[9999] grid min-h-[100dvh] place-items-center bg-black/80 p-3 sm:p-6"
+      onMouseDown={onClose}
+      role="presentation"
+    >
+      <div
+        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl sm:max-h-[calc(100dvh-3rem)]"
+        onMouseDown={(event) => event.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
       >
-        <Github />
-      </a>
-    )}
-  </div>
-);
+        {/* Modal header */}
+        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-white/10 p-4 sm:p-6">
+          <h2
+            id="project-modal-title"
+            className="pr-8 text-xl font-bold text-white sm:text-3xl"
+          >
+            {project.title}
+          </h2>
 
-const FigmaProjectCard = ({ project }) => (
-  <div className="p-6 rounded-xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition">
-    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-    {project.image && (
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-48 object-cover"
-      />
-    )}
-    <div className="p-4">
-      
-      {project.figmaUrl && (
-      <a
-        href={project.figmaUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-400 hover:text-blue-300 h-12 w-10"
-      >
-        <Link2 />
-      </a>
-    )}
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close project details"
+            className="shrink-0 rounded-full p-2 text-gray-400 transition hover:bg-white/10 hover:text-white"
+          >
+            <X size={21} />
+          </button>
+        </div>
+
+        {/* Modal scrollable content */}
+        <div className="min-h-0 overflow-y-auto p-4 sm:p-6">
+          {project.image && (
+            <div className="overflow-hidden rounded-xl border border-white/10 bg-black/20">
+              <img
+                src={project.image}
+                alt={`${project.title} project screenshot`}
+                className="block h-auto max-h-[45vh] w-full "
+              />
+            </div>
+          )}
+
+          <p className="mt-5 text-sm leading-relaxed text-gray-300 sm:text-base">
+            {project.details || project.description}
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-blue-500/10 px-3 py-1.5 text-xs text-blue-400 sm:text-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600"
+              >
+                <Github size={18} />
+                View Code
+              </a>
+            )}
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-blue-500/50 px-4 py-2 text-sm text-blue-400 transition hover:bg-blue-500/10"
+              >
+                <ExternalLink size={18} />
+                Live Demo
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
-    
-  </div>
-);
+  );
 
+  // This renders the modal directly under <body>.
+  return createPortal(modal, document.body);
+};
 
 export const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const filteredProjects =
-    activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.type === activeFilter);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center py-20 overflow-x-hidden"
+      className="flex min-h-screen items-center justify-center py-16 sm:py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <h2 className="mb-10 text-center text-3xl font-bold text-transparent bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text sm:mb-12 sm:text-4xl">
             Featured Projects
           </h2>
 
-          {/* FILTER TABS */}
-          <div className="flex justify-center gap-2 mb-10 flex-wrap px-2">
-            {filters.map((filter) => (
-              <button
-                key={filter.value}
-                onClick={() => setActiveFilter(filter.value)}
-                className={`px-4 py-2 rounded-full text-sm transition
-                  ${
-                    activeFilter === filter.value
-                      ? "bg-blue-500 text-white"
-                      : "bg-white/5 text-gray-300 hover:bg-white/10"
-                  }`}
+          {/* Equal-height responsive cards */}
+          <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <article
+                key={project.id}
+                className="flex h-full flex-col rounded-xl border border-white/10 bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)] sm:p-6"
               >
-                {filter.label}
-              </button>
+                <div className="flex-1">
+                  <h3 className="mb-3 text-lg font-bold text-white sm:text-xl">
+                    {project.title}
+                  </h3>
+
+                  <p className="mb-5 text-sm leading-relaxed text-gray-400 sm:text-base">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400 transition hover:bg-blue-500/20 sm:text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Card footer */}
+                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    className="rounded-lg bg-blue-500/10 px-3 py-2 text-sm font-medium text-blue-400 transition hover:bg-blue-500 hover:text-white"
+                  >
+                    View Details
+                  </button>
+
+                  <div className="flex items-center gap-4">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} source code`}
+                        className="text-blue-400 transition hover:text-blue-300"
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
+
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} live demo`}
+                        className="text-blue-400 transition hover:text-blue-300"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
 
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => {
-              if (project.type === "office")
-                return (
-                  <OfficeProjectCard key={project.id} project={project} />
-                );
-
-              if (project.type === "web")
-                return (
-                  <WebProjectCard key={project.id} project={project} />
-                );
-
-              if (project.type === "figma")
-                return (
-                  <FigmaProjectCard key={project.id} project={project} />
-                );
-
-              return null;
-            })}
-          </div>
-
-          
-          <div className="text-center mt-12">
+          {/* GitHub button */}
+          <div className="mt-10 text-center sm:mt-12">
             <a
               href="https://github.com/AparnaUnni"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-500 text-white py-2 px-4 rounded-lg inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600 sm:text-base"
             >
-              Check My GitHub <ArrowRight size={16} />
+              Check My GitHub
+              <ArrowRight size={16} />
             </a>
           </div>
         </div>
+
+        {/* Render modal only when a project is selected */}
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
       </RevealOnScroll>
     </section>
   );
 };
-
