@@ -12,8 +12,22 @@ import {
 import { RevealOnScroll } from "../RevealOnScroll";
 
 const projects = [
-  {
+    {
     id: 1,
+    title: "Product Feedback Analyser",
+    description:
+      "AI-powered app that extracts themes, sentiment, and pain points from customer reviews, with evidence-backed feature suggestions and a context-grounded chat assistant.",
+    details:
+      "An AI-powered app that turns raw customer reviews into structured insights — automatic theme and sentiment extraction, ranked pain points, and evidence-backed feature suggestions, plus a context-grounded chat to ask follow-up questions.",
+    image: "/projects/FeedbackAI.png",
+    tags: [
+      "Next.js","TypeScript","PostgreSQL","Drizzle ORM","Gemini API"
+    ],
+    githubUrl: "https://github.com/AparnaUnni/ProductFeedbackAnalyzer",
+    liveUrl: "https://product-feedback-analyzer-ten.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Employee Management Dashboard",
     description:
       "Secure admin dashboard with JWT authentication, employee and team CRUD management, attendance tracking with check-in/check-out logs, and monthly reports visualised with Recharts.",
@@ -31,7 +45,7 @@ const projects = [
     liveUrl: "https://employee-workforce-dashboard-teal.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Product Dashboard with AI Assistant",
     description:
       "Next.js admin dashboard with real-time product catalogue and a context-scoped AI assistant.",
@@ -49,7 +63,7 @@ const projects = [
     liveUrl: "",
   },
   {
-    id: 3,
+    id: 4,
     title: "Art Institution Website",
     description:
       "Website for an art and dance institution with sections for programme images, videos, and faculty details.",
@@ -61,7 +75,7 @@ const projects = [
     liveUrl: "https://nalanda-arts.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Memoria - E-commerce Gift Store",
     description:
       "Full-featured e-commerce platform for category browsing and product ordering.",
@@ -79,7 +93,7 @@ const projects = [
     liveUrl: "",
   },
   {
-    id: 5,
+    id: 6,
     title: "Centralized Test Management Tool",
     description:
       "End-to-end test management tool for requirement analysis, test execution and report generation.",
