@@ -21,7 +21,7 @@ LinkedIn: https://www.linkedin.com/in/aparna-unni-928514225
 GitHub: https://github.com/AparnaUnni
 
 Experience:
-- 1.5+ years at Tata Elxsi Limited as Frontend Developer (Mar 2024 - Aug 2025)
+- 2+ years at Tata Elxsi Limited as Frontend Developer (Mar 2024 - Aug 2025)
 - Improved app load time by 20% through React performance optimisation
 - Reduced manual QA effort by 40% through Python automation tool
 - Built 10+ reusable React components improving efficiency by 30%
@@ -34,9 +34,12 @@ Skills:
 - AI: Gemini API, Prompt Engineering, LLM integration
 
 Projects:
-- Centralized Test Management Tool: React.js, Python, REST APIs, MongoDB
+- Product Feedback Analyser: Next.js, TypeScript, PostgreSQL, Drizzle ORM, Gemini API
+- Employee Management Dashboard: Next.js, Express.js, MongoDB, Recharts, JWT Auth
+- Product Dashboard with AI Assistant: Next.js,React, Gemini API, Tailwind CSS
+- Art Institution Website: HTML, CSS, JavaScript, Responsive Design
 - Memoria E-commerce Gift Store: Next.js, React, Node.js, MongoDB, Tailwind, JWT
-- Project Expense Tracker: Full-stack budget management app
+- Centralized Test Management Tool: React.js, Python, REST APIs, MongoDB
 - AI Portfolio Chatbot: Gemini API integration with real-time conversation
 
 Education: B.Tech, CGPA 8.43, APJ Abdul Kalam Technological University (2019-2023)

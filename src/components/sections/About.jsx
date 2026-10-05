@@ -137,7 +137,7 @@ export const About = () => {
                  </p>
            
                  <p className="mt-3 text-sm leading-relaxed text-gray-300 sm:text-base">
-                   Built and deployed AI-powered web applications and client websites including an e-commerce platform, an employee management dashboard with attendance tracking, and a Gemini API-powered portfolio chatbot with context-scoped prompt engineering.
+                   Built and deployed AI-powered web applications and client websites including an e-commerce platform, animated website for a CRM automation company, an employee management dashboard with attendance tracking, and a Gemini API-powered portfolio chatbot with context-scoped prompt engineering.
                  </p>
                </div>
            

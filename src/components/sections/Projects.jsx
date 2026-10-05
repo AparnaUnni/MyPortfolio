@@ -90,7 +90,7 @@ const projects = [
       "Tailwind CSS",
     ],
     githubUrl: "https://github.com/AparnaUnni/OnlineGiftStore",
-    liveUrl: "",
+    liveUrl: "https://online-gift-store.vercel.app/",
   },
   {
     id: 6,
