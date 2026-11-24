@@ -12,8 +12,41 @@ import {
 import { RevealOnScroll } from "../RevealOnScroll";
 
 const projects = [
+
     {
     id: 1,
+    title: "CLEVER WINK Website",
+    description:
+      "Animated company website for an automation, CRM and HRMS services business, with service pages, a contact form and built-in SEO and analytics.",
+    details:
+      "Built and launched the company website in Next.js with Aceternity UI animations, a Resend-powered contact form, Search Console and GA4 lead tracking, and a 98 mobile / 100 desktop PageSpeed score. Deployed on Vercel with a custom .ae domain.",
+    image: "/projects/CleverWink.png", 
+    tags: ["Next.js", "Aceternity UI", "Tailwind CSS", "Resend", "GA4", "Vercel"],
+    liveUrl: "https://cleverwink.ae",
+  },
+  {
+    id: 2,
+    title: "Clever Wink OS",
+    description:
+      "Internal management platform for tracking projects, invoices, payments and expenses.",
+    details:
+      "An internal CRM and management platform built for Clever Wink to manage projects and income in one place, covering invoices, payments and expenses, with support for adding team members later.",
+    image: "/projects/CleverWinkOS.png",
+    tags: ["Next.js", "TypeScript","Supabase" ], // update with your real stack
+    // private/internal, so no githubUrl or liveUrl
+  },
+  {
+    id: 3,
+    title: "n8n AI Inbox Triage",
+    description:
+      "LLM automation pipeline that reads incoming emails, classifies them and logs the results automatically.",
+    details:
+      "An n8n workflow that pulls emails through the Gmail API, uses Groq-hosted LLMs to classify and prioritise them, and writes the results to Google Sheets.", // adjust to what it actually does
+    image: "/projects/InboxTriage.png", 
+    tags: ["n8n", "Groq", "Gmail API", "Google Sheets API"],
+  },
+    {
+    id: 4,
     title: "Product Feedback Analyser",
     description:
       "AI-powered app that extracts themes, sentiment, and pain points from customer reviews, with evidence-backed feature suggestions and a context-grounded chat assistant.",
@@ -27,7 +60,7 @@ const projects = [
     liveUrl: "https://product-feedback-analyzer-ten.vercel.app/",
   },
   {
-    id: 2,
+    id: 5,
     title: "Employee Management Dashboard",
     description:
       "Secure admin dashboard with JWT authentication, employee and team CRUD management, attendance tracking with check-in/check-out logs, and monthly reports visualised with Recharts.",
@@ -45,7 +78,7 @@ const projects = [
     liveUrl: "https://employee-workforce-dashboard-teal.vercel.app/",
   },
   {
-    id: 3,
+    id: 6,
     title: "Product Dashboard with AI Assistant",
     description:
       "Next.js admin dashboard with real-time product catalogue and a context-scoped AI assistant.",
@@ -63,7 +96,7 @@ const projects = [
     liveUrl: "",
   },
   {
-    id: 4,
+    id: 7,
     title: "Art Institution Website",
     description:
       "Website for an art and dance institution with sections for programme images, videos, and faculty details.",
@@ -75,7 +108,7 @@ const projects = [
     liveUrl: "https://nalanda-arts.vercel.app/",
   },
   {
-    id: 5,
+    id: 8,
     title: "Memoria - E-commerce Gift Store",
     description:
       "Full-featured e-commerce platform for category browsing and product ordering.",
@@ -93,7 +126,7 @@ const projects = [
     liveUrl: "https://online-gift-store.vercel.app/",
   },
   {
-    id: 6,
+    id: 9,
     title: "Centralized Test Management Tool",
     description:
       "End-to-end test management tool for requirement analysis, test execution and report generation.",
