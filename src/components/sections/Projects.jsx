@@ -195,7 +195,7 @@ const ProjectModal = ({ project, onClose }) => {
               <img
                 src={project.image}
                 alt={`${project.title} project screenshot`}
-                className="block h-auto max-h-[45vh] w-full "
+                className="block h-auto max-h-[65vh] w-full "
               />
             </div>
           )}
